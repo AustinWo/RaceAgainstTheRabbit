@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function Animal(speed,focus){
+  this.speed = speed;
+  this.focus = focus;
+  this.position = 0;
+  this.run = function() {
+    if(Math.random() * 10 < this.focus){
+      this.position = this.position + this.speed;
+    }
+    return this.position;
+  }
+}
+
+var rabbit = new Animal(4,0);
+var turtle = new Animal(1,10);
+
+var rabbitResult = rabbit.run();
+var turtleResult = turtle.run();
+
+alert("The distance traveled required to win the race is 1 mile. The rabbit has run a distance of [" + rabbitResult + "] mile(s) from the beginning point and the turtle has run a distance of [" + turtleResult + "] mile(s) from the beginning point.");
+
+if (rabbitResult > turtleResult){
+alert("Rabbit won!");
+}
+
+else {
+  alert("Turtle Won!");
+}
+
+</script>
+</head>
+
+</html>
